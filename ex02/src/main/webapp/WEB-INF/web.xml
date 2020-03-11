@@ -32,7 +32,8 @@
 	
 	<!-- 한글 처리 필터 -->
 	<filter> 
-		<filter-name>encoding</filter-name> 
+		<filter-name>encoding</filter-name>
+		<!-- 필터 구현 객체 지정 --> 
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class> 
 		<init-param> 
 			<param-name>encoding</param-name> 
