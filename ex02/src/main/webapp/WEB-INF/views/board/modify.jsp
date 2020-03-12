@@ -83,8 +83,9 @@
 				formObj.attr("action", "/board/remove");
 			}else if(operation === 'list') {
 				//move to list
-				self.location = "/board/list";
-				return;
+				formObj.attr("action", "/board/list");
+				formObj.attr("method", "get");
+				formObj.empty();
 			} 
 			formObj.submit();
 		})
