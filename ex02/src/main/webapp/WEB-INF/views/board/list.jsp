@@ -75,7 +75,7 @@
             </div>
             <!-- /.row -->
 
-	<script type="text/javascript">
+<script type="text/javascript">
 		$(document).ready(function() {
 			var result = '<c:out value="${result}"/>';
 			
