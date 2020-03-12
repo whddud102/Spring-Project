@@ -20,24 +20,24 @@
 
 			<div class="panel-body">
 					<div class="form-group">
-						<label>Bno</label> <input class="form-control" name="Bno" value='<c:out value="${board.bno }"/>' readonly="readonly">
+						<label>게시글 번호</label> <input class="form-control" name="Bno" value='<c:out value="${board.bno }"/>' readonly="readonly">
 					</div>
 
 					<div class="form-group">
-							<label>Title</label> <input class="form-control" name="title" value='<c:out value="${board.title }"/>' readonly="readonly">
+							<label>제목</label> <input class="form-control" name="title" value='<c:out value="${board.title }"/>' readonly="readonly">
 					</div>
 
 					<div class="form-group">
-						<label>Text area</label>
+						<label>내용</label>
 						<textarea class="form-control" rows="3" name="content" readonly="readonly" ><c:out value="${board.content }"/></textarea>
 					</div>
 
 					<div class="form-group">
-						<label>Writer</label> <input class="form-control" name="writer" value='<c:out value="${board.writer }"/>' readonly="readonly">
+						<label>작성자</label> <input class="form-control" name="writer" value='<c:out value="${board.writer }"/>' readonly="readonly">
 					</div>
 
-					<button data-oper='modify' class="btn btn-default" onclick="location.href='/board/modify?bno=<c:out value="${board.bno }"/>'"> Modify</button>
-					<button data-oper='list' class="btn btn-info" onclick="location.href='/board/list'">List</button>
+					<button data-oper='modify' class="btn btn-default" onclick="location.href='/board/modify?bno=<c:out value="${board.bno }"/>'"> 수정</button>
+					<button data-oper='list' class="btn btn-info" onclick="location.href='/board/list'">목록</button>
 			</div>
 			<!-- end panel body -->
 		</div>
