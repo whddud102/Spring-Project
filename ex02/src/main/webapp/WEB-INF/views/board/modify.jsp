@@ -42,13 +42,13 @@
 					</div>
 
 					<div class="form-group">
-						<label>작성 날짜</label> <input class="form-control" name="regDate"
+						<input class="form-control" name="regDate"
 							value='<fmt:formatDate pattern="yyyy/MM/dd" value="${board.regdate}"/>'
 							readonly="readonly" type="hidden" />
 					</div>
 
 					<div class="form-group">
-						<label>수정 날짜</label> <input class="form-control" name="updateDate"
+						<input class="form-control" name="updateDate"
 							value='<fmt:formatDate pattern="yyyy/MM/dd" value="${board.updateDate}"/>'
 							readonly="readonly" type="hidden" />
 					</div>
