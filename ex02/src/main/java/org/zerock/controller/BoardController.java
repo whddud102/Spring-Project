@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.domain.BoardVO;
+import org.zerock.domain.Criteria;
 import org.zerock.service.BoardService;
 
 import lombok.AllArgsConstructor;
@@ -22,10 +23,18 @@ public class BoardController {
 	// 단일 파라미터를 갖는 생성자는 스프링이 자동으로 의존성 주입
 	private BoardService service;
 	
+	/* 이전 버전 코드
 	@GetMapping("/list")
 	public void list(Model model) {
 		log.info("list");
 		model.addAttribute("list",	service.getList());
+	}
+	*/
+	
+	@GetMapping("/list")
+	public void list(Criteria cri, Model model) {
+		log.info("list: " + cri);
+		model.addAttribute("list",	service.getList(cri));
 	}
 	
 	@PostMapping("/register")
