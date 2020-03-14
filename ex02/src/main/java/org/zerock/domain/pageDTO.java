@@ -24,7 +24,7 @@ public class pageDTO {
 		this.startPage = this.endPage - 9;	// 페이지 번호를 10개씩 보여준다는 전제
 		
 		// 실제 가지고 있는 데이터에 맞는 끝 페이지 번호를 계산
-		int realEnd = (int)(Math.ceil(total * 1.0) / cri.getAmount());
+		int realEnd = (int) (Math.ceil((total * 1.0) / cri.getAmount()));
 		
 		// 실제 끝 페이지 번호가 표시된 페이지 끝 번호보다 적을 경우 재 계산
 		if(realEnd < this.endPage) {
