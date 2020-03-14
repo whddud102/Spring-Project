@@ -36,7 +36,7 @@
 					<c:forEach items="${list}" var="board">
 						<tr>
 							<td><c:out value="${board.bno }"></c:out></td>
-							<td><a href='<c:out value="${board.bno}"/>'><c:out
+							<td><a class="move" href='<c:out value="${board.bno}"/>'><c:out
 										value="${board.title }" /></a></td>
 							<td><c:out value="${board.content }"></c:out></td>
 							<td><fmt:formatDate value="${board.regdate }"
@@ -141,6 +141,17 @@
 				actionForm.find("input[name='pageNum']").val($(this).attr("href"));
 				actionForm.submit();
 			});
+			
+			$(".move").on("click", function(e) {
+				e.preventDefault();
+				// actionForm 에 bno 값 전송을 위한 input 태그 추가
+				// <input type='hidden' name='bno' value='게시글 번호'>
+				actionForm.append("<input type='hidden' name='bno' value='" + $(this).attr("href") + "'>");
+				actionForm.attr("action", "/board/get");
+				actionForm.submit();
+				
+			})
+			
 	});
 </script>
 <%@include file="../includes/footer.jsp"%>
