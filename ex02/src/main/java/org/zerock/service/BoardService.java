@@ -24,4 +24,7 @@ public interface BoardService {
 	
 	//모든 게시물 가져오기 - Criteria 객체를 전달 받도록 수정
 	public List<BoardVO> getList(Criteria cri);
+	
+	// 전체 데이터 개수 가져오기
+	public int getTotal(Criteria cri);
 }

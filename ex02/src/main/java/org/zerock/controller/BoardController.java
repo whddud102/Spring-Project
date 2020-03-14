@@ -37,7 +37,13 @@ public class BoardController {
 	public void list(Criteria cri, Model model) {
 		log.info("list: " + cri);
 		model.addAttribute("list",	service.getList(cri));
-		model.addAttribute("pageMaker", new pageDTO(cri, 123));
+		
+		int total = service.getTotal(cri);
+		
+		log.info("totla: " + total);
+		model.addAttribute("pageMaker", new pageDTO(cri, total));
+		
+		//model.addAttribute("pageMaker", new pageDTO(cri, 123));
 	}
 	
 	@PostMapping("/register")
