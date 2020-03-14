@@ -20,6 +20,11 @@
 
 			<div class="panel-body">
 				<form role="form" action="/board/modify" method="post">
+					
+					<!-- pageNum, amount 정보도 같이 전송하도록 추가 -->
+					<input type="hidden" name="pageNum" value='<c:out value="${cri.pageNum}"/>'>
+					<input type="hidden" name="amount" value='<c:out value="${cri.amount}"/>'>
+				
 					<div class="form-group">
 						<label>게시글 번호</label> <input class="form-control" name="bno"
 							value='<c:out value="${board.bno }"/>' readonly="readonly">
@@ -52,7 +57,7 @@
 							value='<fmt:formatDate pattern="yyyy/MM/dd" value="${board.updateDate}"/>'
 							readonly="readonly" type="hidden" />
 					</div>
-
+					
 					<button type="submit" data-oper='modify' class="btn btn-default">수정</button>
 					<button type="submit" data-oper='remove' class="btn btn-danger">삭제</button>
 					<button type="submit" data-oper='list' class="btn btn-info">목록</button>
@@ -85,7 +90,15 @@
 				//move to list
 				formObj.attr("action", "/board/list");
 				formObj.attr("method", "get");
+				
+				// 필요한 태그들을 복사해 두고, form 내의 태그들 전부 삭제
+				var pageNumTag = $("input[name='pageNum']").clone();
+				var amountTag = $("input[name='amount']").clone();
+				
 				formObj.empty();
+				formObj.append(pageNumTag);	// 필요한 태그만 붙여넣기
+				formObj.append(amountTag);	// 필요한 태그만 붙여넣기
+
 			} 
 			formObj.submit();
 		})
