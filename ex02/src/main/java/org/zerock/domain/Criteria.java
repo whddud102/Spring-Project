@@ -12,7 +12,7 @@ public class Criteria {
 	private int amount;		// 필요한 게시글의 수
 	
 	private String type;	// 검색 조건
-	private String keyWord; // 검색 조건 키워드 
+	private String keyword; // 검색 조건 키워드 
 	
 	public Criteria() {
 		// 기본 생성자로 페이지 번호 = 1, 게시글 수 = 10으로 지정
