@@ -101,7 +101,7 @@ public class BoardMapperTests {
 		
 		Criteria cri = new Criteria();
 		cri.setKeyword("새로");
-		cri.setType("TC");
+		cri.setType("TWC");
 		
 		List<BoardVO> list = mapper.getListWithPaging(cri);
 		
