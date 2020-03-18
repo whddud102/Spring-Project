@@ -54,15 +54,15 @@
 					<div class="col-lg-12">
 						<form id="searchForm" method="get" action="/board/list">
 							<select name="type">
-								<option value="">검색 조건</option>
-								<option value="T">제목</option>
-								<option value="C">내용</option>
-								<option value="W">작성자</option>
-								<option value="TC">제목 or 내용</option>
-								<option value="TW">제목 or 작성자</option>
-								<option value="TWC">제목 or 내용 or 작성자</option>
+								<option value="" <c:out value="${pageMaker.cri.type == null? 'selected': ''}" />>검색 조건</option>
+								<option value="T" <c:out value="${pageMaker.cri.type == 'T'? 'selected': ''}" />>제목</option>
+								<option value="C" <c:out value="${pageMaker.cri.type == 'C'? 'selected': ''}" />>내용</option>
+								<option value="W" <c:out value="${pageMaker.cri.type == 'W'? 'selected': ''}" />>작성자</option>
+								<option value="TC" <c:out value="${pageMaker.cri.type == 'TC'? 'selected': ''}" />>제목 or 내용</option>
+								<option value="TW" <c:out value="${pageMaker.cri.type == 'TW'? 'selected': ''}" />>제목 or 작성자</option>
+								<option value="TWC" <c:out value="${pageMaker.cri.type == 'T'? 'selected': ''}" />>제목 or 내용 or 작성자</option>
 							</select> 
-							<input type="text" name="keyword" /> 
+							<input type="text" name="keyword" value='<c:out value="${pageMaker.cri.keyword }" />' /> 
 							<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}"> 
 							<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
 							<button class="btn btn-default">검색</button>
