@@ -49,23 +49,46 @@
 				</table>
 				<!-- table 태그의 끝 -->
 
+				<!-- 검색창 -->
+				<div class="row">
+					<div class="col-lg-12">
+						<form id="searchForm" method="get" action="/board/list">
+							<select name="type">
+								<option value="">검색 조건</option>
+								<option value="T">제목</option>
+								<option value="C">내용</option>
+								<option value="W">작성자</option>
+								<option value="TC">제목 or 내용</option>
+								<option value="TW">제목 or 작성자</option>
+								<option value="TWC">제목 or 내용 or 작성자</option>
+							</select> 
+							<input type="text" name="keyword" /> 
+							<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}"> 
+							<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
+							<button class="btn btn-default">검색</button>
+						</form>
+					</div>
+				</div>
+
 				<!-- 페이징 처리 -->
 				<div class="pull-right">
 					<ul class="pagination">
 						<c:if test="${pageMaker.prev }">
-							<li class="paginate_button previous"><a href="${pageMaker.startPage-1}">Previous</a>
-							</li>
+							<li class="paginate_button previous"><a
+								href="${pageMaker.startPage-1}">Previous</a></li>
 						</c:if>
-						
-						<c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
+
+						<c:forEach var="num" begin="${pageMaker.startPage }"
+							end="${pageMaker.endPage }">
 							<li class="paginate_button"><a href="${num }">${num}</a></li>
 						</c:forEach>
-						
+
 						<c:if test="${pageMaker.next }">
-							<li class="paginate_button next"><a href="${pageMaker.endPage+1 }">Next</a></li>
+							<li class="paginate_button next"><a
+								href="${pageMaker.endPage+1 }">Next</a></li>
 						</c:if>
 					</ul>
-				
+
 				</div>
 				<!-- end paginate -->
 
