@@ -93,10 +93,14 @@
 				// 필요한 태그들을 복사해 두고, form 내의 태그들 전부 삭제
 				var pageNumTag = $("input[name='pageNum']").clone();
 				var amountTag = $("input[name='amount']").clone();
+				var keywordTag = $("input[name='keyword']").clone();
+				var typeTag = $("input[name='type']").clone();
 				
 				formObj.empty();
 				formObj.append(pageNumTag);	// 필요한 태그만 붙여넣기
 				formObj.append(amountTag);	// 필요한 태그만 붙여넣기
+				formObj.append(keywordTag);	// 필요한 태그만 붙여넣기
+				formObj.append(typeTag);	// 필요한 태그만 붙여넣기
 
 			} 
 			formObj.submit();
